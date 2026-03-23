@@ -1,206 +1,666 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LEXCORP MZILANKATHA HARDWARE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Grain Overlay -->
-  <div class="grain-overlay"></div>
+/* LEXCORP MZILANKATHA HARDWARE - Styles */
 
-  <!-- Persistent Header -->
-  <header class="persistent-header">
-    <div class="logo">LEXCORP MZILANKATHA HARDWARE</div>
-  </header>
+/* CSS Variables */
+:root {
+  --bg-dark: #1A1A1A;
+  --bg-light: #F2F2F2;
+  --accent: #FFD600;
+  --text-primary: #F6F6F6;
+  --text-secondary: #B8B8B8;
+  --text-dark: #111111;
+  --text-muted: #4A4A4A;
+  --whatsapp: #25D366;
+}
 
-  <!-- Persistent Footer Info -->
-  <div class="persistent-footer">
-    <div class="footer-left">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
-      <span>0729902027</span>
-    </div>
-    <div class="footer-right">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-        <circle cx="12" cy="10" r="3"/>
-      </svg>
-      <span>10199 Bossworth Farm, Ballengeich, Newcastle, 2942</span>
-    </div>
-  </div>
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Section 1: Hero -->
-  <section class="section hero" id="hero">
-    <div class="bg-image" style="background-image: url('images/hero_warehouse.jpg')"></div>
-    <div class="hero-content">
-      <div class="tape-band">
-        <h1>BUILT FOR</h1>
-        <h1>THE JOB</h1>
-      </div>
-      <p class="subheadline">Quality hardware · Fast delivery · Expert advice</p>
-    </div>
-  </section>
+html {
+  scroll-behavior: smooth;
+}
 
-  <!-- Section 2: Stocked for Every Trade -->
-  <section class="section" id="stocked">
-    <div class="bg-image" style="background-image: url('images/stocked_shelves.jpg')"></div>
-    <div class="section-content">
-      <div class="tape-band">
-        <h1>STOCKED FOR</h1>
-        <h1>EVERY TRADE</h1>
-      </div>
-      <p class="subheadline">Tools · Materials · Safety · Finishes</p>
-    </div>
-  </section>
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
 
-  <!-- Section 3: Fast Delivery -->
-  <section class="section" id="delivery">
-    <div class="bg-image" style="background-image: url('images/delivery_truck.jpg')"></div>
-    <div class="section-content">
-      <div class="tape-band">
-        <h1>FAST DELIVERY</h1>
-        <h1>TO YOUR SITE</h1>
-      </div>
-      <div class="badge">24–48 HR<br>TURNAROUND</div>
-      <p class="subheadline">Newcastle area · Bulk orders · Same-day when possible</p>
-    </div>
-  </section>
+/* Typography */
+.font-display {
+  font-family: 'Saira Condensed', sans-serif;
+}
 
-  <!-- Section 5: Quality You Can Trust -->
-  <section class="section" id="quality">
-    <div class="bg-image" style="background-image: url('images/tools_closeup.jpg')"></div>
-    <div class="section-content">
-      <div class="tape-band">
-        <h1>QUALITY YOU</h1>
-        <h1>CAN TRUST</h1>
-      </div>
-      <div class="badge">10-DAY<br>RETURNS</div>
-      <p class="subheadline">Tested brands. Proper specs. No shortcuts.</p>
-    </div>
-  </section>
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
 
-  <!-- Section 6: Reliable Supply -->
-  <section class="section" id="reliable">
-    <div class="bg-image" style="background-image: url('images/pallets_yard.jpg')"></div>
-    <div class="section-content">
-      <div class="tape-band">
-        <h1>RELIABLE</h1>
-        <h1>SUPPLY</h1>
-      </div>
-      <p class="subheadline">Bulk stock · Contractor pricing · Account setups available</p>
-    </div>
-  </section>
+/* Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
 
-  <!-- Section 7: Talk to the Team -->
-  <section class="section" id="team">
-    <div class="bg-image" style="background-image: url('images/team_counter.jpg')"></div>
-    <div class="section-content">
-      <div class="tape-band">
-        <h1>TALK TO</h1>
-        <h1>THE TEAM</h1>
-      </div>
-      <div class="chat-bubble">
-        "Need help choosing? Send a photo of your list."
-      </div>
-      <p class="subheadline">Call, WhatsApp, or visit—we'll sort you out.</p>
-    </div>
-  </section>
+/* Persistent Header */
+.persistent-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4vh 6vw;
+  z-index: 100;
+  pointer-events: none;
+}
 
-  <!-- Section 8: Ready When You Are -->
-  <section class="section" id="ready">
-    <div class="bg-image" style="background-image: url('images/wide_yard.jpg')"></div>
-    <div class="corner-bracket tl"></div>
-    <div class="corner-bracket br"></div>
-    <div class="section-content">
-      <div class="tape-band">
-        <h1>READY WHEN</h1>
-        <h1>YOU ARE</h1>
-      </div>
-      <p class="subheadline">Open early. Stocked daily. Delivered fast.</p>
-    </div>
-  </section>
+.persistent-header > * {
+  pointer-events: auto;
+}
 
-  <!-- Section 9: Contact -->
-  <section class="section contact-section" id="contact">
-    <div class="contact-tape">
-      LEXCORP MZILANKATHA HARDWARE · NEWCASTLE
-    </div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>
-        <h3>Address</h3>
-        <p>10199 Bossworth Farm, Ballengeich, Newcastle, 2942</p>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </div>
-        <h3>Contact</h3>
-        <p>0729902027</p>
-        <a href="https://wa.me/27729902027" target="_blank" class="whatsapp-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          WhatsApp us
-        </a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </div>
-        <h3>Hours</h3>
-        <p>Mon–Fri: 08:00–17:00</p>
-        <p>Sat: 08:00–15:00</p>
-        <p>Sun: Closed</p>
-      </div>
-    </div>
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.5!2d29.9!3d-27.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQyJzAwLjAiUyAyOcKwNTQnMDAuMCJF!5e0!3m2!1sen!2sza!4v1600000000000!5m2!1sen!2sza"
-        width="100%"
-        height="100%"
-        style="border:0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="LEXCORP MZILANKATHA HARDWARE Location">
-      </iframe>
-    </div>
-    <footer>
-      <p>© LEXCORP MZILANKATHA HARDWARE. All rights reserved.</p>
-      <button onclick="scrollToTop()" class="back-to-top">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="12" y1="19" x2="12" y2="5"/>
-          <polyline points="5 12 12 5 19 12"/>
-        </svg>
-        Back to top
-      </button>
-    </footer>
-  </section>
+.logo {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/27729902027" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.btn-primary:hover {
+  background-color: #e6c200;
+  transform: translateY(-1px);
+}
+
+/* Persistent Footer */
+.persistent-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vh 6vw;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.footer-right {
+  text-align: right;
+  max-width: 250px;
+}
+
+/* Sections */
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.bg-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.65));
+}
+
+/* Hero Section */
+.hero {
+  z-index: 10;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Section Content */
+.section-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Tape Band */
+.tape-band {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  padding: 4vh 8vw;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tape-band h1 {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: clamp(48px, 12vw, 140px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin: 0;
+}
+
+/* Subheadline */
+.subheadline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 4vh;
+  text-align: center;
+}
+
+/* Badge */
+.badge {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+  margin: 3vh auto 0;
+}
+
+/* Quote Section */
+.quote-section {
+  align-items: flex-start;
+  padding-top: 15vh;
+}
+
+.quote-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 6vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.quote-left {
+  padding-top: 10vh;
+}
+
+.tape-strips {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.tape-strip {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  line-height: 1;
+}
+
+.quote-desc {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  max-width: 300px;
+}
+
+/* Quote Form */
+.quote-form-container {
+  background-color: rgba(26, 26, 26, 0.92);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #666;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--accent);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #e6c200;
+}
+
+/* Form Success */
+.form-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.form-success.hidden {
+  display: none;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--text-dark);
+}
+
+.form-success h3 {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.form-success p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Chat Bubble */
+.chat-bubble {
+  position: absolute;
+  bottom: 15vh;
+  left: 8vw;
+  background-color: rgba(26, 26, 26, 0.92);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px 24px;
+  max-width: 280px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--text-primary);
+  z-index: 2;
+}
+
+/* Corner Brackets */
+.corner-bracket {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-color: var(--accent);
+  border-style: solid;
+  z-index: 2;
+}
+
+.corner-bracket.tl {
+  top: 10vh;
+  left: 6vw;
+  border-width: 4px 0 0 4px;
+}
+
+.corner-bracket.br {
+  bottom: 10vh;
+  right: 6vw;
+  border-width: 0 4px 4px 0;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: var(--bg-light);
+  min-height: auto;
+  flex-direction: column;
+  padding: 0;
+}
+
+.contact-tape {
+  width: 100%;
+  background-color: var(--accent);
+  color: var(--text-dark);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  padding: 16px;
+  text-transform: uppercase;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 60px 6vw;
+}
+
+.contact-card {
+  text-align: center;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--text-dark);
+}
+
+.contact-card h3 {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 20px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.contact-card p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--whatsapp);
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.whatsapp-link:hover {
+  background-color: #128C7E;
+}
+
+/* Map */
+.map-container {
+  width: 100%;
+  height: 45vh;
+  min-height: 320px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background-color: var(--bg-dark);
+  padding: 24px 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #666;
+}
+
+.back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--whatsapp);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .quote-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .quote-left {
+    padding-top: 0;
+    text-align: center;
+  }
+  
+  .tape-strips {
+    align-items: center;
+  }
+  
+  .quote-desc {
+    margin: 24px auto 0;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .chat-bubble {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 24px auto 0;
+  }
+  
+  .corner-bracket {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .persistent-footer {
+    flex-direction: column;
+    gap: 8px;
+    padding: 2vh 6vw;
+  }
+  
+  .footer-right {
+    text-align: center;
+    max-width: none;
+  }
+  
+  .tape-band h1 {
+    font-size: clamp(36px, 14vw, 80px);
+  }
+  
+  .quote-form-container {
+    padding: 24px;
+  }
+  
+  footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .whatsapp-float {
+    animation: none;
+  }
+}
