@@ -116,3 +116,22 @@ function scrollToTop() {
     behavior: 'smooth'
   });
 }
+
+/* ===== GALLERY CAROUSEL STYLES ===== */
+.gallery-section { min-height: 100vh; padding: 12vh 0; }
+.gallery-container { position: relative; z-index: 1; width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 6vw; }
+.gallery-header { text-align: center; margin-bottom: 6vh; }
+.carousel-wrapper { position: relative; display: flex; align-items: center; gap: 20px; }
+.carousel-track-container { flex: 1; overflow: hidden; border-radius: 12px; background-color: rgba(0,0,0,0.5); border: 2px solid var(--accent); }
+.carousel-track { display: flex; transition: transform 0.5s ease; height: 60vh; min-height: 400px; }
+.carousel-slide { flex: 0 0 100%; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.carousel-slide img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+.carousel-btn { width: 56px; height: 56px; border-radius: 50%; background-color: var(--accent); color: var(--text-dark); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; transition: all 0.3s ease; flex-shrink: 0; }
+.carousel-btn:hover { background-color: #e6c200; transform: scale(1.1); }
+.carousel-indicators { display: flex; justify-content: center; gap: 8px; margin-top: 24px; flex-wrap: wrap; }
+.carousel-indicator { width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255,255,255,0.3); border: 2px solid transparent; cursor: pointer; transition: all 0.3s ease; }
+.carousel-indicator.active { background-color: var(--accent); border-color: var(--accent); transform: scale(1.2); }
+.carousel-counter { text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: var(--text-secondary); margin-top: 16px; }
+.carousel-counter .current-image { color: var(--accent); font-weight: 600; }
+@media (max-width: 968px) { .carousel-track { height: 50vh; min-height: 300px; } .carousel-btn { width: 44px; height: 44px; font-size: 20px; } }
+@media (max-width: 640px) { .carousel-track { height: 40vh; min-height: 250px; } .carousel-btn { width: 36px; height: 36px; font-size: 18px; } .carousel-indicator { width: 10px; height: 10px; } }
